@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <meta name="description" content="Embárcate en una épica aventura mágica donde un valiente hechicero debe vencer a hordas de slimes invasores. Descubre tus poderes, salta entre plataformas y salva el reino. ¡Demuestra tu magia en este emocionante juego de plataformas!" />
+    <title>Wizard vs Slimes</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <script src="./helpers/jquery.min.js"></script>
+    <script src="./helpers/responsive.js"></script>
+</head>
+<body class="ancho">
+
+    <!-- INIT SCREEN -->
+    <section class="abs back screen" id="init">
+        <div class="abs darken"></div>
+        <div class="abs back heart heart-1"></div>
+        <div class="abs back heart heart-2"></div>
+        <div class="abs back heart heart-3"></div>
+        <div class="abs back logo"></div>
+
+        <div class="abs back" id="play-btn"></div>
+        <div class="abs back" id="instruct-btn"></div>
+        <div class="abs back open-full" id="full-btn"></div>
+
+        <div class="abs instruct">
+            <div class="abs back" id="desktop-instruct"></div>
+            <div class="abs back" id="mobile-instruct"></div>
+            <div class="abs back exit"></div>
+        </div>
+    </section>
+
+    <!-- GAME SCREEN -->
+    <section class="abs screen" id="game">
+        <canvas></canvas>
+        <div class="abs back btn" id="left-btn"></div>
+        <div class="abs back btn" id="right-btn"></div>
+        <div class="abs back btn" id="jump-btn"></div>
+        <div class="abs back btn" id="shoot-btn"></div>
+
+        <!-- Win pop -->
+        <div class="abs" id="win-pop">
+            <div class="abs back text"></div>
+            <p class="abs" id="total-score">0</p>
+            <div class="abs back exit"></div>
+            <div class="abs back" id="retry-btn"></div>
+        </div>
+    </section>
+
+    <!-- SCRIPTS -->
+    <script src="js/Player.js"></script>
+    <script src="js/Enemies.js"></script>
+    <script src="js/Platform.js"></script>
+    <script src="js/Item.js"></script>
+    <script src="js/Objects.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/Screens.js"></script>
+    <script src="js/sprites.js"></script>
+    <script src="js/sounds.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
