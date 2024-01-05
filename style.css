@@ -12,7 +12,8 @@ html {
     background-color: #000;
     width: 100vw;
     height: 100vh;
-    overflow: hidden;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 .ancho {
@@ -253,7 +254,7 @@ canvas {
 
 #left-btn {
     bottom: 5%;
-    left: 4%;
+    left: 2.5%;
     background-image: url(./assets/images/left-btn.png);
 }
 
