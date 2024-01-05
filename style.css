@@ -2,7 +2,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    overflow: hidden;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-user-select: none;
     user-select: none;
@@ -241,9 +240,9 @@ canvas {
 }
 
 .btn {
-    width: 5.5%;
-    height: 10%;
-    opacity: .5;
+    width: 7.5%;
+    height: 14%;
+    opacity: .4;
 }
 
 #right-btn {
@@ -260,13 +259,13 @@ canvas {
 
 #jump-btn {
     bottom: 5%;
-    right: 10%;
+    right: 11%;
     background-image: url(./assets/images/jump-btn.png);
 }
 
 #shoot-btn {
-    bottom: 16%;
-    right: 5%;
+    bottom: 20%;
+    right: 4%;
     background-image: url(./assets/images/shoot-btn.png);
 }
 
