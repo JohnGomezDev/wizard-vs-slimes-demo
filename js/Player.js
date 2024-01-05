@@ -73,51 +73,51 @@ class Player {
     update() {
         counter++;
         
-        if((this.currentSprite == this.sprites.stand.left || 
-            this.currentSprite == this.sprites.stand.right ||
-            this.currentSprite == this.sprites.jump.right ||
-            this.currentSprite == this.sprites.jump.left ||
-            this.currentSprite == player.sprites.dead.right) && 
-            counter % 12 == 0) {
+        if((this.currentSprite === this.sprites.stand.left || 
+            this.currentSprite === this.sprites.stand.right ||
+            this.currentSprite === this.sprites.jump.right ||
+            this.currentSprite === this.sprites.jump.left ||
+            this.currentSprite === player.sprites.dead.right) && 
+            counter % 12 === 0) {
             this.frames++;
         }
 
-        if((this.currentSprite == this.sprites.run.left || 
-            this.currentSprite == this.sprites.run.right) && 
-            counter % 5 == 0) {
+        if((this.currentSprite === this.sprites.run.left || 
+            this.currentSprite === this.sprites.run.right) && 
+            counter % 5 === 0) {
             this.frames++;
         }
 
-        if((this.currentSprite == this.sprites.attack.right ||
-            this.currentSprite == this.sprites.attack.left) && 
-            counter % 4 == 0) {
+        if((this.currentSprite === this.sprites.attack.right ||
+            this.currentSprite === this.sprites.attack.left) && 
+            counter % 4 === 0) {
             this.frames++;
         }
 
         
-        if((this.currentSprite == this.sprites.stand.left || 
-            this.currentSprite == this.sprites.stand.right) 
+        if((this.currentSprite === this.sprites.stand.left || 
+            this.currentSprite === this.sprites.stand.right) 
             && this.frames > 4) {
             this.frames = 0;
         }
 
-        if((this.currentSprite == this.sprites.run.left || 
-            this.currentSprite == this.sprites.run.right ||
-            this.currentSprite == this.sprites.jump.right ||
-            this.currentSprite == this.sprites.jump.left) 
+        if((this.currentSprite === this.sprites.run.left || 
+            this.currentSprite === this.sprites.run.right ||
+            this.currentSprite === this.sprites.jump.right ||
+            this.currentSprite === this.sprites.jump.left) 
             && this.frames > 7) {
             this.frames = 0;
         }
         
         
-        if((this.currentSprite == this.sprites.attack.right || 
-            this.currentSprite == this.sprites.attack.left) && 
+        if((this.currentSprite === this.sprites.attack.right || 
+            this.currentSprite === this.sprites.attack.left) && 
             this.frames > 2) {
             this.isShotting = false;
             this.frames = 2;
         }
 
-        if(this.isDead && this.currentSprite == player.sprites.dead.right && this.frames > 4) {
+        if(this.isDead && this.currentSprite === player.sprites.dead.right && this.frames > 4) {
             this.frames = 4
         }
 
@@ -162,7 +162,7 @@ class Bullet {
             y
         };
         this.velocity = {
-            x: orientation == 'right' ? 10 : -10,
+            x: orientation === 'right' ? 10 : -10,
             y: 0
         };
         this.width = 45;

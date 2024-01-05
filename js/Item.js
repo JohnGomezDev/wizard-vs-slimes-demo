@@ -44,7 +44,7 @@ class Item {
     }
 
     update() {
-        if(counter % 6 == 0) this.frames++;
+        if(counter % 6 === 0) this.frames++;
         if(this.frames > this.limitFrames) this.frames = 0;
 
         this.draw();

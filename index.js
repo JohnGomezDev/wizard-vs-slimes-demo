@@ -415,7 +415,7 @@ function animate() {
     }
 
     // * Pintar si se acaban las vidas
-    if (lives == 0) {
+    if (lives === 0) {
         gameOverScreen.draw();
     }
 
@@ -468,7 +468,7 @@ function animate() {
             player.position.y + player.height + player.velocity.y >= enemy.position.y &&
             player.position.x + player.width >= enemy.position.x &&
             player.position.x <= enemy.position.x + enemy.width) {
-            if (!enemy.isDead && (enemy.type == 'green' || enemy.type == 'blue')) {
+            if (!enemy.isDead && (enemy.type === 'green' || enemy.type === 'blue')) {
                 player.velocity.y = 0;
                 enemy.die();
                 sounds.enemy.dead.volume = .25;
@@ -477,7 +477,7 @@ function animate() {
                 score += 100;
 
                 itemsCounter.forEach(item => {
-                    if (item.type == 'score') {
+                    if (item.type === 'score') {
                         item.counter = score;
                     }
                 });
@@ -521,20 +521,20 @@ function animate() {
             item.position.y <= (player.position.y + player.height) &&
             player.position.y <= (item.position.y + item.height)) {
 
-            if (item.type == 'coins' && !item.collected) {
+            if (item.type === 'coins' && !item.collected) {
                 item.velocity.y = -15;
                 item.collected = true;
                 sounds.coin.play();
                 collectedCoins++;
 
                 itemsCounter.forEach(item => {
-                    if (item.type == 'coins') {
+                    if (item.type === 'coins') {
                         item.counter = collectedCoins;
                     }
                 });
             }
 
-            if (item.type == 'keys') {
+            if (item.type === 'keys') {
                 item.velocity.y = -2;
                 sounds.bc.complete.play();
                 sounds.bc.level1.pause();
@@ -546,7 +546,7 @@ function animate() {
                 player.win();
             }
 
-            if (item.type == 'potion' && !player.hasPower) {
+            if (item.type === 'potion' && !player.hasPower) {
                 player.hasPower = true;
                 item.width = 0;
                 item.height = 0;
@@ -559,42 +559,42 @@ function animate() {
     });
 
     // * Change of sprites
-    if (!player.isDead && !player.won && !player.isShotting && keys.right.pressed && lastKey == 'd' && !player.isJumping && player.currentSprite != player.sprites.run.right) {
+    if (!player.isDead && !player.won && !player.isShotting && keys.right.pressed && lastKey === 'd' && !player.isJumping && player.currentSprite != player.sprites.run.right) {
         player.frames = 1;
         player.currentSprite = player.sprites.run.right;
         player.currentCropWith = player.sprites.run.cropWidth;
         player.width = player.sprites.run.width;
-    } else if (!player.isDead && !player.won && !player.isShotting && keys.left.pressed && lastKey == 'a' && !player.isJumping && player.currentSprite != player.sprites.run.left) {
+    } else if (!player.isDead && !player.won && !player.isShotting && keys.left.pressed && lastKey === 'a' && !player.isJumping && player.currentSprite != player.sprites.run.left) {
         player.frames = 1;
         player.currentSprite = player.sprites.run.left;
         player.currentCropWith = player.sprites.run.cropWidth;
         player.width = player.sprites.run.width;
-    } else if (!player.isDead && !player.won && !player.isShotting && !keys.right.pressed && lastKey == 'd' && !player.isJumping && player.currentSprite != player.sprites.stand.right) {
+    } else if (!player.isDead && !player.won && !player.isShotting && !keys.right.pressed && lastKey === 'd' && !player.isJumping && player.currentSprite != player.sprites.stand.right) {
         player.frames = 1;
         player.currentSprite = player.sprites.stand.right;
         player.currentCropWith = player.sprites.stand.cropWidth;
         player.width = player.sprites.stand.width;
-    } else if (!player.isDead && !player.won && !player.isShotting && !keys.left.pressed && lastKey == 'a' && !player.isJumping && player.currentSprite != player.sprites.stand.left) {
+    } else if (!player.isDead && !player.won && !player.isShotting && !keys.left.pressed && lastKey === 'a' && !player.isJumping && player.currentSprite != player.sprites.stand.left) {
         player.frames = 1;
         player.currentSprite = player.sprites.stand.left;
         player.currentCropWith = player.sprites.stand.cropWidth;
         player.width = player.sprites.stand.width;
-    } else if (!player.isDead && !player.won && !player.isShotting && lastKey == 'd' && player.isJumping && player.currentSprite != player.sprites.jump.right) {
+    } else if (!player.isDead && !player.won && !player.isShotting && lastKey === 'd' && player.isJumping && player.currentSprite != player.sprites.jump.right) {
         player.frames = 1;
         player.currentSprite = player.sprites.jump.right;
         player.currentCropWith = player.sprites.jump.cropWidth;
         player.width = player.sprites.jump.width;
-    } else if (!player.isDead && !player.won && !player.isShotting && lastKey == 'a' && player.isJumping && player.currentSprite != player.sprites.jump.left) {
+    } else if (!player.isDead && !player.won && !player.isShotting && lastKey === 'a' && player.isJumping && player.currentSprite != player.sprites.jump.left) {
         player.frames = 1;
         player.currentSprite = player.sprites.jump.left;
         player.currentCropWith = player.sprites.jump.cropWidth;
         player.width = player.sprites.jump.width;
-    } else if (!player.isDead && !player.won && player.isShotting && lastKey == 'd' && !keys.right.pressed && player.currentSprite != player.sprites.attack.right) {
+    } else if (!player.isDead && !player.won && player.isShotting && lastKey === 'd' && !keys.right.pressed && player.currentSprite != player.sprites.attack.right) {
         player.frames = 1;
         player.currentSprite = player.sprites.attack.right;
         player.currentCropWith = player.sprites.attack.cropWidth;
         player.width = player.sprites.attack.width;
-    } else if (!player.isDead && !player.won && player.isShotting && lastKey == 'a' && !keys.left.pressed && player.currentSprite != player.sprites.attack.left) {
+    } else if (!player.isDead && !player.won && player.isShotting && lastKey === 'a' && !keys.left.pressed && player.currentSprite != player.sprites.attack.left) {
         player.frames = 1;
         player.currentSprite = player.sprites.attack.left;
         player.currentCropWith = player.sprites.attack.cropWidth;
@@ -630,8 +630,8 @@ function shoot() {
     if (player.hasPower && player.currentSprite != player.sprites.run.right && player.currentSprite != player.sprites.run.left && !beenShot) {
         player.isShotting = true;
 
-        if (lastKey == 'd') bullets.push(new Bullet({ x: player.position.x + 20, y: player.position.y + 25, orientation: 'right' }));
-        if (lastKey == 'a') bullets.push(new Bullet({ x: player.position.x - 30, y: player.position.y + 25, orientation: 'left' }));
+        if (lastKey === 'd') bullets.push(new Bullet({ x: player.position.x + 20, y: player.position.y + 25, orientation: 'right' }));
+        if (lastKey === 'a') bullets.push(new Bullet({ x: player.position.x - 30, y: player.position.y + 25, orientation: 'left' }));
 
         sounds.player.shoot.volume = .3;
         sounds.player.shoot.play();

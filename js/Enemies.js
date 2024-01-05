@@ -56,17 +56,17 @@ class LinearEnemy {
     }
 
     update() {
-        if(counter % 6 == 0) this.frames++;
+        if(counter % 6 === 0) this.frames++;
 
-        if((this.currentSprite == this.sprites.green.img || this.currentSprite == this.sprites.red.img) && this.frames > 6) {
+        if((this.currentSprite === this.sprites.green.img || this.currentSprite === this.sprites.red.img) && this.frames > 6) {
             this.frames = 0;
         }
 
-        if(this.currentSprite == this.sprites.dead.img && this.frames > 13) {
+        if(this.currentSprite === this.sprites.dead.img && this.frames > 13) {
             this.frames = 0;
         }
 
-        if(this.isDead && this.frames == 13) {
+        if(this.isDead && this.frames === 13) {
             this.height = 0;
             this.width = 0;
         }
@@ -165,29 +165,29 @@ class WalkingEnemy {
     }
 
     update() {
-        if((this.currentSprite == this.sprites.green.img || 
-            this.currentSprite == this.sprites.red.img ||
-            this.currentSprite == this.sprites.dead[this.type]) &&
-            counter % 6 == 0) {
+        if((this.currentSprite === this.sprites.green.img || 
+            this.currentSprite === this.sprites.red.img ||
+            this.currentSprite === this.sprites.dead[this.type]) &&
+            counter % 6 === 0) {
             this.frames++;
         }
 
-        if(this.currentSprite == this.sprites.blue.img && counter % 20 == 0) {
+        if(this.currentSprite === this.sprites.blue.img && counter % 20 === 0) {
             this.frames++;
         }
 
-        if((this.currentSprite == this.sprites.green.img || 
-            this.currentSprite == this.sprites.red.img || 
-            this.currentSprite == this.sprites.blue.img) 
+        if((this.currentSprite === this.sprites.green.img || 
+            this.currentSprite === this.sprites.red.img || 
+            this.currentSprite === this.sprites.blue.img) 
             && this.frames > 6) {
             this.frames = 0;
         }
 
-        if(this.currentSprite == this.sprites.dead[this.type] && this.frames > 13) {
+        if(this.currentSprite === this.sprites.dead[this.type] && this.frames > 13) {
             this.frames = 0;
         }
 
-        if(this.isDead && this.frames == 13) {
+        if(this.isDead && this.frames === 13) {
             this.height = 0;
             this.width = 0;
         }
@@ -197,12 +197,12 @@ class WalkingEnemy {
         
         this.distance++;
 
-        if(this.distance % this.limit == 0) {
-            this.orientation = this.orientation == 'left' ? 'right' : 'left';
+        if(this.distance % this.limit === 0) {
+            this.orientation = this.orientation === 'left' ? 'right' : 'left';
         }
         
         if(!this.isDead) {
-            if(this.orientation == 'left') {
+            if(this.orientation === 'left') {
                 this.velocity.x = -Math.abs(this.velocity.x);
             } else {
                 this.velocity.x = Math.abs(this.velocity.x);
