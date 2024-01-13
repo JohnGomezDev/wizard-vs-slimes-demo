@@ -11,10 +11,12 @@ fullScreenBtn.click(function() {
     const btn = $(this);
 
     if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement) {
+        $('html').css('overflow-y', 'auto');
         closeFullscreen();
         btn.removeClass('normal-full');
         btn.addClass('open-full');
     } else {
+        $('html').css('overflow-y', 'hidden');
         openFullscreen();
         btn.removeClass('open-full');
         btn.addClass('normal-full');

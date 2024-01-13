@@ -57,9 +57,5 @@ class GameOverScreen {
             context.fillStyle = '#fff';
             context.fillText('GAME OVER', 440, 368);
         }
-
-        if(this.timer > 300) {
-            location.reload();
-        }
     }
 }
