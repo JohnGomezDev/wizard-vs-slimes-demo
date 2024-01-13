@@ -56,6 +56,7 @@ retryBtn.click(() => {
     totalScore.text(0);
     collectedCoins = 0;
     score = 0;
+    lives = 3;
 
     init();
 });
